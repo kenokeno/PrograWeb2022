@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /MySite
+  working_directory: /MySite
     docker:
       - image: docker:17.05.0-ce-git
     steps:
