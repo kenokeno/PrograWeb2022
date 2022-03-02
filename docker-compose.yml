@@ -7,7 +7,7 @@ services:
       - 8080:8080
       - 9990:9990
   selenium-hub:
-    images: selenium/hub
+    image: selenium/hub
     ports:
       - 4442:4442
       - 4443:4443
@@ -15,7 +15,7 @@ services:
     depends_on:
       - mysite
   selenium-chrome:
-    images: selenium/node-chrome
+    image: selenium/node-chrome
     shm_size: 2gb
     depends_on:
       - selenium-hub
