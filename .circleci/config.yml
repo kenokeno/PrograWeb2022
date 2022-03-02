@@ -17,4 +17,6 @@ jobs:
           name: Run test
           command: |
             docker-compose up -d
+            docker ps
+            docker inspect docker
             python test.py
