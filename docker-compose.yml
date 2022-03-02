@@ -5,9 +5,22 @@ services:
     ports:
       - 8080:8080
       - 9990:9990
-  selenium:
-    images: selenium/standalone-chrome
+  selenium-chrome:
+    images: selenium/node-chrome
+    shm_size: 2gb
+    depend_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     ports:
-      - 4444:4444
+      - "6900:5900"
+  selenium-hub:
+    images: selenium/hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
     depend_on:
       - mysite
