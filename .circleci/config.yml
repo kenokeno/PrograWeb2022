@@ -17,6 +17,4 @@ jobs:
           name: Run test
           command: |
             docker-compose up -d
-            docker ps
-            ifconfig
             python test.py
