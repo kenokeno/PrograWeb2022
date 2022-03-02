@@ -17,5 +17,4 @@ jobs:
           name: Run test
           command: |
             docker-compose up -d
-            ping http://172.0.0.1:4444
             python test.py
