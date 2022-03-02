@@ -13,7 +13,7 @@ jobs:
             apk add --no-cache py-pip=9.0.0-r1
             pip install selenium==3.141.0
             pip install docker-compose==1.15.0
-            ifconfig
+            docker ps
       - run:
           name: Run test
           command: |
