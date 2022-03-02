@@ -7,11 +7,11 @@ import time
 
 class html_unittest(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Remote('http://127.0.0.1:4444/wd/hub', desired_capabilities=webdriver.DesiredCapabilities.CHROME)
+        self.driver = webdriver.Remote('http://172.17.0.3:4444/wd/hub', desired_capabilities=webdriver.DesiredCapabilities.CHROME)
     
     def test_parrafos(self):
         driver = self.driver
-        driver.get("http://172.17.0.2:8080/AppWeb/index.html")
+        driver.get("http://172.17.0.4:8080/AppWeb/index.html")
         time.sleep(3)
         paragraphs = driver.find_elements_by_tag_name('p')
         for paragraph in paragraphs:
