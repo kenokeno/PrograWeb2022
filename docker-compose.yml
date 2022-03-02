@@ -1,13 +1,13 @@
 services:
-	mysite:
-		build: .
-		container_name: misitio
-		port:
-			8080:8080
-			9990:9990
-	selenium:
-		images: selenium/standalone-chrome
-		port:
-			4444:4444
-		depend_on:
-			- mysite
+  mysite:
+    build: .
+    container_name: misitio
+    ports:
+      - 8080:8080
+      - 9990:9990
+  selenium:
+    images: selenium/standalone-chrome
+    ports:
+      - 4444:4444
+    depend_on:
+      - mysite
