@@ -13,7 +13,7 @@ jobs:
             apk add --no-cache py-pip=9.0.0-r1
             pip install docker-compose==1.15.0
       - run:
-        name: Run test
-        command: |
-          docker-compose up -d
-          docker-compose run misitio pyton /opt/jboss/wildfly/welcome-content/test.py
+          name: Run test
+          command: |
+            docker-compose up -d
+            docker-compose run misitio python /opt/jboss/wildfly/welcome-content/test.py
