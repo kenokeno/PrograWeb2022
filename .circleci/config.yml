@@ -18,5 +18,5 @@ jobs:
           command: |
             docker-compose up -d
             docker ps
-            docker inspect docker
+            ifconfig
             python test.py
