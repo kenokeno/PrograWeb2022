@@ -2,7 +2,6 @@ version: '2'
 services:
   mysite:
     build: .
-    container_name: misitio
     ports:
       - 8080:8080
       - 9990:9990
