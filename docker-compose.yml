@@ -3,11 +3,15 @@ services:
   mysite:
     build: .
     container_name: misitio
+    networks:
+      - host
     ports:
       - 8080:8080
       - 9990:9990
   selenium-hub:
     image: selenium/hub
+    networks:
+      - host
     ports:
       - 4442:4442
       - 4443:4443
@@ -19,6 +23,8 @@ services:
     shm_size: 2gb
     depends_on:
       - selenium-hub
+    networks:
+      - host
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
