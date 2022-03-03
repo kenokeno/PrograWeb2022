@@ -7,7 +7,7 @@ import time
 
 class html_unittest(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Remote('http://localhost:4444/wd/hub', desired_capabilities=webdriver.DesiredCapabilities.CHROME)
+        self.driver = webdriver.Remote(command_executor='http://selenium-hub:4444/wd/hub', desired_capabilities=webdriver.DesiredCapabilities.CHROME)
     
     def test_parrafos(self):
         driver = self.driver
