@@ -16,11 +16,10 @@ services:
       - 4444:4444
     depends_on:
       - mysite
+      - selenium-chrome
   selenium-chrome:
     image: selenium/node-chrome
     shm_size: 2gb
-    depends_on:
-      - selenium-hub
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
