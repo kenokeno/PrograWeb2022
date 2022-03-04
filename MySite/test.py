@@ -10,11 +10,12 @@ import os
 class html_unittest(unittest.TestCase):
     def setUp(self):
         host = os.environ['SELENIUM_REMOTE_HOST']
-        self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub'.format(host), desired_capabilities=webdriver.DesiredCapabilities.CHROME)
+        self.driver = webdriver.Remote(command_executor='http://{}:4444/wd/hub'.format(host), desired_capabilities=webdriver.DesiredCapabilities.CHROME)
     
     def test_parrafos(self):
+        webApp = os.environ['WEBAPP_HOST']
         driver = self.driver
-        driver.get("http://localhost:8080/AppWeb/index.html")
+        driver.get("http://{}:8080/AppWeb/index.html".format(webApp))
         time.sleep(3)
         paragraphs = driver.find_elements_by_tag_name('p')
         for paragraph in paragraphs:
