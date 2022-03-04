@@ -17,5 +17,4 @@ jobs:
           name: Run test
           command: |
             docker-compose up -d
-            docker ps
-            python test.py
+            docker-compose run mysite python test.py
