@@ -8,6 +8,8 @@ services:
       - 9990:9990
     environment:
       - SELENIUM_REMOTE_HOST=selenium-hub
+    depends_on:
+      - selenium-chrome
   selenium-hub:
     image: selenium/hub
     ports:
