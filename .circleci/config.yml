@@ -16,4 +16,6 @@ jobs:
           name: Run test
           command: |
             docker-compose up -d
+            docker inspect selenium-hub
+            docker inspect mysite
             docker-compose run mysite python /opt/jboss/wildfly/welcome-content/test.py
