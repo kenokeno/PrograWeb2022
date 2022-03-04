@@ -10,7 +10,7 @@ import os
 class html_unittest(unittest.TestCase):
     def setUp(self):
         host = os.environ['SELENIUM_REMOTE_HOST']
-        self.driver = webdriver.Remote(command_executor='http://{}:4444/wd/hub'.format(host), desired_capabilities=webdriver.DesiredCapabilities.CHROME)
+        self.driver = webdriver.Remote(command_executor='http://172.17.0.3:4444/wd/hub'.format(host), desired_capabilities=webdriver.DesiredCapabilities.CHROME)
     
     def test_parrafos(self):
         webApp = os.environ['WEBAPP_HOST']
