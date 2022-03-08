@@ -11,6 +11,9 @@ class html_unittest(unittest.TestCase):
     def setUp(self):
         host = os.environ['SELENIUM_REMOTE_HOST']
         chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Remote(command_executor='http://172.18.0.4:4444/wd/hub', options=chrome_options)
     
     def test_parrafos(self):
