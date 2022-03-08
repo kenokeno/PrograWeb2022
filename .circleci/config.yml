@@ -11,7 +11,7 @@ jobs:
           name: Install Dependencies
           command: |
             apk add --no-cache py-pip=9.0.0-r1
-            apk add curl
+            yum install curl
             pip install docker-compose==1.15.0
             pip install selenium==3.141.0
       - run:
