@@ -17,6 +17,6 @@ jobs:
           name: Run test
           command: |
             docker-compose up -d
-            docker inspect mysite_selenium-hub_1
+            docker inspect mysite_selenium-chrome_1
             docker inspect misitio
             python test.py
