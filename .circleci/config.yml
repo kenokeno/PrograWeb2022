@@ -19,5 +19,5 @@ jobs:
             docker-compose up -d
             docker inspect mysite_selenium-hub_1
             docker inspect misitio
-            docker exec mistio curl --retry 10 --retry-connrefused http://localhost:8080
+            docker exec misitio curl --retry 10 --retry-connrefused http://localhost:8080
             python test.py
