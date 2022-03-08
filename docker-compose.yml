@@ -3,6 +3,8 @@ services:
   mysite:
     build: .
     container_name: misitio
+    networks:
+      - grid
     ports:
       - 8080:8080
       - 9990:9990
@@ -12,6 +14,8 @@ services:
       - selenium-chrome
   selenium-hub:
     image: selenium/hub
+    networks:
+      - grid
     ports:
       - 4442:4442
       - 4443:4443
@@ -22,6 +26,8 @@ services:
   selenium-chrome:
     image: selenium/node-chrome
     shm_size: 2gb
+    networks:
+      - grid
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
