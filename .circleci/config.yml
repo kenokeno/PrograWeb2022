@@ -11,7 +11,6 @@ jobs:
           name: Install Dependencies
           command: |
             apk add --no-cache py-pip=9.0.0-r1
-            apk --no-cache add curl
             pip install docker-compose==1.15.0
             pip install selenium==3.141.0
       - run:
@@ -20,5 +19,4 @@ jobs:
             docker-compose up -d
             docker inspect mysite_selenium-hub_1
             docker inspect misitio
-            curl http://localhost:4444
             python test.py
