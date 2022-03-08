@@ -10,8 +10,6 @@ services:
       - 9990:9990
     environment:
       - SELENIUM_REMOTE_HOST=selenium-hub
-    depends_on:
-      - selenium-chrome
   selenium-hub:
     image: selenium/hub
     networks:
@@ -22,18 +20,17 @@ services:
       - 4444:4444
     depends_on:
       - mysite
-      - selenium-chrome
   selenium-chrome:
     image: selenium/node-chrome
     shm_size: 2gb
+    depends_on:
+      - selenium-hub
     networks:
       - grid
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    ports:
-      - 6900:5900
 
 networks:
   grid:

@@ -18,4 +18,4 @@ jobs:
             docker-compose up -d
             docker inspect mysite_selenium-hub_1
             docker inspect misitio
-            docker-compose run mysite python /opt/jboss/wildfly/welcome-content/test.py
+            python test.py

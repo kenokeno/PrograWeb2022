@@ -9,13 +9,14 @@ import os
 
 class html_unittest(unittest.TestCase):
     def setUp(self):
-        host = os.environ['SELENIUM_REMOTE_HOST']
-        self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub'.format(host), desired_capabilities=webdriver.DesiredCapabilities.CHROME)
+        #host = os.environ['SELENIUM_REMOTE_HOST']
+        self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub', desired_capabilities=webdriver.DesiredCapabilities.CHROME)
     
     def test_parrafos(self):
+        #webApp = os.environ['WEBAPP_HOST']
         driver = self.driver
-        driver.get("http://localhost:8080/AppWeb/index.html")
-        time.sleep(3)
+        driver.get("http://172.18.0.3:8080/AppWeb/index.html")
+        time.sleep(5)
         paragraphs = driver.find_elements_by_tag_name('p')
         for paragraph in paragraphs:
             assert "This is a paragraph." in paragraph.text
