@@ -3,8 +3,6 @@ services:
   mysite:
     build: .
     container_name: misitio
-    networks:
-      - grid
     ports:
       - 8080:8080
       - 9990:9990
@@ -13,13 +11,7 @@ services:
   selenium-chrome:
     image: selenium/standalone-chrome
     shm_size: 2gb
-    networks:
-      - grid
     ports:
       - 4444:4444
     depends_on:
       - mysite
-
-networks:
-  grid:
-    driver: bridge
