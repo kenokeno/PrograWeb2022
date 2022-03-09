@@ -17,6 +17,9 @@ jobs:
           name: Run test
           command: |
             docker-compose up -d
+            docker network create grid
+            docker network connect grid misitio
+            docker network connect grid mysite_selenium-chrome_1
             docker inspect mysite_selenium-chrome_1
             docker inspect misitio
             python test.py
