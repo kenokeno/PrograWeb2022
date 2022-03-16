@@ -10,10 +10,10 @@ import os
 class html_unittest(unittest.TestCase):
     def setUp(self):
         #host = os.environ['SELENIUM_REMOTE_HOST']
-        username = os.getenv("BROWSERSTACK_USERNAME")
-        access_key = os.getenv("BROWSERSTACK_ACCESS_KEY")
-        browserstack_local = os.getenv("BROWSERSTACK_LOCAL")
-        browserstack_local_identifier = os.getenv("BROWSERSTACK_LOCAL_IDENTIFIER")
+        username = os.environ("BROWSERSTACK_USERNAME")
+        access_key = os.environ("BROWSERSTACK_ACCESS_KEY")
+        browserstack_local = os.environ("BROWSERSTACK_LOCAL")
+        browserstack_local_identifier = os.environ("BROWSERSTACK_LOCAL_IDENTIFIER")
         caps = {
             'os': 'Windows',
             'browser': 'chrome',
