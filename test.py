@@ -11,8 +11,6 @@ class html_unittest(unittest.TestCase):
     def setUp(self):
         #host = os.environ['SELENIUM_REMOTE_HOST']
         username = os.getenv("BROWSERSTACK_USERNAME")
-        print ("USER Name: " + username)
-        print ("KEY Acces: " + len(access_key))
         access_key = os.getenv("BROWSERSTACK_ACCESS_KEY")
         browserstack_local = os.getenv("BROWSERSTACK_LOCAL")
         browserstack_local_identifier = os.getenv("BROWSERSTACK_LOCAL_IDENTIFIER")
