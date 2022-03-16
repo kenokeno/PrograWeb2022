@@ -19,9 +19,9 @@ jobs:
             apk add --no-cache py-pip=9.0.0-r1
             pip install docker-compose==1.15.0
             pip install selenium==3.141.0
-            
+
             apk add --update openssl
-            wget --no-check-certificate "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
+            wget "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
             unzip BrowserStackLocal-linux-x64.zip
             ./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY}: background: true
       - run:
