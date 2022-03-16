@@ -6,6 +6,8 @@ services:
     ports:
       - 8080:8080
       - 9990:9990
+    depends_on:
+      - selenium-chrome
     environment:
       - SELENIUM_REMOTE_HOST=selenium-chrome
   selenium-chrome:
@@ -13,5 +15,3 @@ services:
     shm_size: 2gb
     ports:
       - 4444:4444
-    depends_on:
-      - mysite

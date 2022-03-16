@@ -11,9 +11,7 @@ class html_unittest(unittest.TestCase):
     def setUp(self):
         #host = os.environ['SELENIUM_REMOTE_HOST']
         options = webdriver.ChromeOptions()
-        options.add_argument('--ignore-ssl-errors=yes')
-        options.add_argument('--ignore-certificate-errors')
-        self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub', options=options)
+        self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub', desired_capabilities=options.to_capabilities())
     
     def test_parrafos(self):
         #webApp = os.environ['WEBAPP_HOST']
