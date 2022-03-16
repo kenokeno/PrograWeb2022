@@ -4,7 +4,8 @@ machine:
   environment:
     BROWSERSTACK_USERNAME: "alfredoayalaorte_MB2SFH"
     BROWSERSTACK_ACCESS_KEY: "Rg48u7zQz7PvkfW6hsyq"
-    BROWSERSTACK_LOCAL: true
+    BROWSERSTACK_LOCAL: false
+    BROWSERSTACK_LOCAL_IDENTIFIER: "identifier"
 
 test:
     pre:
@@ -34,9 +35,6 @@ jobs:
           name: Run test
           command: |
             docker-compose up -d
-            docker network create grid
-            docker network connect grid misitio
-            docker network connect grid mysite_selenium-chrome_1
             docker inspect mysite_selenium-chrome_1
             docker inspect misitio
             python test.py

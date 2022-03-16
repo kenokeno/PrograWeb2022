@@ -10,10 +10,12 @@ import os
 class html_unittest(unittest.TestCase):
     def setUp(self):
         #host = os.environ['SELENIUM_REMOTE_HOST']
-        username = os.environ("BROWSERSTACK_USERNAME")
-        access_key = os.environ("BROWSERSTACK_ACCESS_KEY")
-        browserstack_local = os.environ("BROWSERSTACK_LOCAL")
-        browserstack_local_identifier = os.environ("BROWSERSTACK_LOCAL_IDENTIFIER")
+        username = os.getenv("BROWSERSTACK_USERNAME")
+        print ("USER Name: " + username)
+        print ("KEY Acces: " + len(access_key))
+        access_key = os.getenv("BROWSERSTACK_ACCESS_KEY")
+        browserstack_local = os.getenv("BROWSERSTACK_LOCAL")
+        browserstack_local_identifier = os.getenv("BROWSERSTACK_LOCAL_IDENTIFIER")
         caps = {
             'os': 'Windows',
             'browser': 'chrome',
@@ -22,13 +24,12 @@ class html_unittest(unittest.TestCase):
             'browserstack.user': username,
             'browserstack.key': access_key
         }
-        driver = webdriver.Remote(
-        command_executor='https://'+username+':'+access_key+'@hub-cloud.browserstack.com/wd/hub', desired_capabilities=caps)
+        driver = webdriver.Remote(command_executor='https://hub-cloud.browserstack.com/wd/hub',desired_capabilities=caps)
     
     def test_parrafos(self):
         #webApp = os.environ['WEBAPP_HOST']
         driver = self.driver
-        driver.get("http://172.18.0.2:8080/AppWeb/index.html")
+        driver.get("http://locahost:8080/AppWeb/index.html")
         time.sleep(5)
         paragraphs = driver.find_elements_by_tag_name('p')
         for paragraph in paragraphs:
