@@ -23,7 +23,8 @@ jobs:
             apk add --update openssl
             wget "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
             unzip BrowserStackLocal-linux-x64.zip
-            ./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY}: background: true
+            ls
+            ./BrowserStackLocal-linux-x64 --key ${BROWSERSTACK_ACCESS_KEY}: background: true
       - run:
           name: Run test
           command: |
