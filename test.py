@@ -22,8 +22,8 @@ class html_unittest(unittest.TestCase):
             'browserstack.user': username,
             'browserstack.key': access_key
         }
-
-        driver = webdriver.Remote(command_executor='https://hub-cloud.browserstack.com/wd/hub', desired_capabilities=caps)
+        driver = webdriver.Remote(
+        command_executor='https://'+username+':'+access_key+'@hub-cloud.browserstack.com/wd/hub', desired_capabilities=caps)
     
     def test_parrafos(self):
         #webApp = os.environ['WEBAPP_HOST']
