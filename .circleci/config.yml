@@ -5,11 +5,6 @@ jobs:
     working_directory: /MySite
     docker:
       - image: docker:17.05.0-ce-git
-        environment:
-          BROWSERSTACK_USERNAME: "alfredoayalaorte_MB2SFH"
-          BROWSERSTACK_ACCESS_KEY: "Rg48u7zQz7PvkfW6hsyq"
-          BROWSERSTACK_LOCAL: false
-          BROWSERSTACK_LOCAL_IDENTIFIER: "identifier"
     steps:
       - checkout
       - setup_remote_docker
@@ -32,4 +27,4 @@ jobs:
             docker-compose up -d
             docker inspect mysite_selenium-chrome_1
             docker inspect misitio
-            python test.py
+            docker-compose run misitio python /opt/jboss/wildfly/welcome-content/test.py

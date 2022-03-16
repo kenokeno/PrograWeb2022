@@ -12,6 +12,10 @@ services:
       - selenium-chrome
     environment:
       - SELENIUM_REMOTE_HOST=selenium-chrome
+      - BROWSERSTACK_USERNAME= "alfredoayalaorte_MB2SFH"
+      - BROWSERSTACK_ACCESS_KEY= "Rg48u7zQz7PvkfW6hsyq"
+      - BROWSERSTACK_LOCAL= false
+      - BROWSERSTACK_LOCAL_IDENTIFIER= "identifier"
   selenium-chrome:
     image: selenium/standalone-chrome
     shm_size: 2gb
