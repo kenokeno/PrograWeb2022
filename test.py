@@ -11,6 +11,7 @@ class html_unittest(unittest.TestCase):
     def setUp(self):
         #host = os.environ['SELENIUM_REMOTE_HOST']
         options = webdriver.ChromeOptions()
+        self.test_selenium_server_available()
         self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub', desired_capabilities=options.to_capabilities())
     
     def test_parrafos(self):
@@ -24,6 +25,19 @@ class html_unittest(unittest.TestCase):
     
     def tearDown(self):
         self.driver.close()
+
+    def test_selenium_server_available():
+        import requests
+        from requests.adapters import HTTPAdapter
+        from requests.packages.urllib3.util.retry import Retry
+
+        session = requests.Session()
+        retry = Retry(connect=5, backoff_factor=0.5)
+        adapter = HTTPAdapter(max_retries=retry)
+        session.mount('http://', adapter)
+        session.mount('https://', adapter)
+
+        session.get("http://localhost:4444/wd/hub")
 
 if __name__ == '__main__':
     unittest.main()
