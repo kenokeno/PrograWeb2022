@@ -26,7 +26,7 @@ class html_unittest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_selenium_server_available():
+    def test_selenium_server_available(self):
         import requests
         from requests.adapters import HTTPAdapter
         from requests.packages.urllib3.util.retry import Retry
