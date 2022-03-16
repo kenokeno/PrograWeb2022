@@ -27,4 +27,4 @@ jobs:
             docker-compose up -d
             docker inspect mysite_selenium-chrome_1
             docker inspect misitio
-            docker-compose run misitio python /opt/jboss/wildfly/welcome-content/test.py
+            docker-compose run mysite python /opt/jboss/wildfly/welcome-content/test.py
