@@ -20,7 +20,7 @@ jobs:
             pip install docker-compose==1.15.0
             pip install selenium==3.141.0
 
-            wget -o - --no-check-certificate "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
+            wget --no-check-certificate "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
             unzip BrowserStackLocal-linux-x64.zip
             ./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY}: background: true
       - run:
