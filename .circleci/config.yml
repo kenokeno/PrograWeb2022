@@ -1,12 +1,5 @@
 version: 2
 
-machine:
-  environment:
-    BROWSERSTACK_USERNAME: "alfredoayalaorte_MB2SFH"
-    BROWSERSTACK_ACCESS_KEY: "Rg48u7zQz7PvkfW6hsyq"
-    BROWSERSTACK_LOCAL: false
-    BROWSERSTACK_LOCAL_IDENTIFIER: "identifier"
-
 test:
     pre:
     # Download the browserstack binary file
@@ -22,6 +15,11 @@ jobs:
     working_directory: /MySite
     docker:
       - image: docker:17.05.0-ce-git
+        environment:
+          BROWSERSTACK_USERNAME: "alfredoayalaorte_MB2SFH"
+          BROWSERSTACK_ACCESS_KEY: "Rg48u7zQz7PvkfW6hsyq"
+          BROWSERSTACK_LOCAL: false
+          BROWSERSTACK_LOCAL_IDENTIFIER: "identifier"
     steps:
       - checkout
       - setup_remote_docker
