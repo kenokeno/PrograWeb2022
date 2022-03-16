@@ -13,7 +13,7 @@ class html_unittest(unittest.TestCase):
         options = webdriver.ChromeOptions()
         options.add_argument('--ignore-ssl-errors=yes')
         options.add_argument('--ignore-certificate-errors')
-        self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub', options=options)
+        self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub', options=options)
     
     def test_parrafos(self):
         #webApp = os.environ['WEBAPP_HOST']
